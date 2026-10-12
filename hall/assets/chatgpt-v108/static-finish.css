@@ -1,0 +1,6 @@
+/* User requested a static exhibition. Keep only action-triggered feedback. */
+.ambient-motion-layer,.ambient-motion-frame { display:none!important; }
+#gov-screen *,#gov-screen::before,#gov-screen::after,
+#gov-screen *::before,#gov-screen *::after,
+.stage,.stage::before,.stage::after,.stage *,
+.stage *::before,.stage *::after { animation:none!important; }

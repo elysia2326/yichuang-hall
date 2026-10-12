@@ -1,0 +1,60 @@
+/* Screen-space model names remain legible independently of perspective scale. */
+#model-labels .model-label,
+#spatial-labels .spatial-tag {
+  color:#f4f7fa;
+  background:#12283c;
+  border:1px solid #8cb2cb;
+  font-size:20px;
+  font-weight:600;
+  line-height:1.55;
+  letter-spacing:0;
+  padding:10px 14px;
+  min-height:46px;
+  text-shadow:none;
+  backdrop-filter:none;
+  box-shadow:0 3px 10px #030a1559,inset 0 1px #c6d9e51f;
+  max-width:calc(100% - 16px);
+  white-space:normal;
+}
+#model-labels .model-label { display:grid; grid-template-columns:auto minmax(0,1fr); gap:4px 8px; text-align:left; }
+#model-labels .model-label[hidden],#spatial-labels .spatial-tag[hidden] { display:none; }
+#model-labels .model-label b { font-size:20px; font-weight:600; }
+#model-labels .model-label span { font-size:16px; color:#c2d8e7; }
+#model-labels .model-label.selected,
+#model-labels .model-label.selected b,
+#spatial-labels .spatial-tag[data-active=true] {
+  font-size:22px; color:#fff2d8;
+}
+#model-labels .model-label.selected,
+#spatial-labels .spatial-tag[data-active=true] {
+  background:#26394c; border-color:#e5c997;
+}
+#model-labels .model-label.routing-label b { font-size:20px; }
+#model-labels .model-label.routing-label small {
+  font-size:16px; line-height:1.75; color:#dce6ef; white-space:normal;
+}
+#model-labels .model-label:focus-visible {
+  outline:3px solid #f3d9a5; outline-offset:3px;
+}
+/* The viewport label is never shrunk below 18px on narrow displays. */
+@media(max-width:660px) {
+  #model-labels .model-label,#model-labels .model-label b,
+  #model-labels .model-label.routing-label b,
+  #spatial-labels .spatial-tag { font-size:18px; padding:9px 11px; }
+  #model-labels .model-label.selected,#model-labels .model-label.selected b,
+  #spatial-labels .spatial-tag[data-active=true] { font-size:20px; }
+  #model-labels .model-label.routing-label small { font-size:16px; }
+}
+
+/* Size every label against its actual viewport; keep complete, wrapping names. */
+#model-labels .model-label { box-sizing:border-box; width:max-content; max-width:min(300px,calc(100% - 16px)); }
+#model-labels .model-label span { margin:0; letter-spacing:0; }
+#model-labels .model-label b { min-width:0; padding:0; white-space:normal; overflow-wrap:anywhere; }
+#model-labels .model-label small { min-width:0; }
+#model-labels .model-label.routing-label { width:min(274px,calc(100% - 16px)); }
+#model-labels .model-label.routing-label small { grid-column:1 / -1; }
+@media(max-width:660px) {
+ #model-labels .model-label { max-width:min(270px,calc(100% - 16px)); }
+ #model-labels .model-label.routing-label { width:min(250px,calc(100% - 16px)); }
+ #model-labels .model-label.routing-label small { line-height:1.5; }
+}

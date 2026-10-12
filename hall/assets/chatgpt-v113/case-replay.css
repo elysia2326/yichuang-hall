@@ -1,0 +1,21 @@
+/* Stable labels, local progress and no idle or decorative loop. */
+#source-dialog .case-replay { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 24px;padding:24px;background:linear-gradient(120deg,#1c3447,#122639);border-bottom:1px solid #a6c1d12b; }
+.case-replay-intro { display:grid;gap:7px; }
+.case-replay-intro strong { color:#e7edf2;font-size:21px;line-height:1.5; }
+.case-replay-intro>span { color:#9fb6c9;font-size:17px;line-height:1.6; }
+.case-replay-buttons { display:flex;align-items:center;gap:10px; }
+#source-dialog #dialog-body .case-replay-buttons button { min-height:46px;padding:11px 18px;border:1px solid #91b6c363;background:linear-gradient(180deg,#315067,#1a3348);box-shadow:inset 0 1px #deedf21c;border-radius:3px;color:#e3eef5;font:inherit;font-size:17px;cursor:pointer; }
+#source-dialog #dialog-body .case-replay-buttons button[data-case-replay="reset"] { background:#102337;color:#b5c8d7; }
+#source-dialog #dialog-body .case-replay-buttons button:disabled { opacity:.48;cursor:default; }
+.case-replay-buttons button:focus-visible { outline:2px solid #e6cea0;outline-offset:3px; }
+#source-dialog #dialog-body .case-replay-steps { grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;margin:0;padding:0;gap:20px; }
+.case-replay-steps li { min-width:0;font-size:18px;line-height:1.5;color:#a1b7c8; }
+.case-replay-steps li>span { display:inline-block;margin-right:12px;color:#89a2b7;font-size:16px;font-variant-numeric:tabular-nums; }
+.case-replay-steps li[data-step-state="current"] { color:#eddfc1; }
+.case-replay-steps li[data-step-state="current"]>span { color:#e2cda8; }
+.case-replay-steps li[data-step-state="done"] { color:#c3d4df; }
+.case-replay-rail { overflow:hidden;height:3px;margin-top:13px;background:#718ca332; }
+.case-replay-rail i { display:block;width:100%;height:100%;background:linear-gradient(90deg,#7bb9c8,#e3cfaa);transform:scaleX(0);transform-origin:left; }
+#source-dialog #dialog-body .case-replay-status { grid-column:1/-1;margin:0;min-height:28px;color:#b3c6d5;font-size:16px;line-height:1.7; }
+@media(max-width:1000px) { #source-dialog .case-replay { grid-template-columns:1fr; }.case-replay-buttons { flex-wrap:wrap; } }
+@media(max-width:700px) { #source-dialog .case-replay { padding:20px 18px;gap:16px; }#source-dialog #dialog-body .case-replay-steps { gap:12px; }.case-replay-steps li { font-size:16px; }.case-replay-steps li>span { display:block;margin:0 0 4px; } }

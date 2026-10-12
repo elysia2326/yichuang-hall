@@ -1,0 +1,13 @@
+/* Dedicated relationship exhibits share hall materials and delegated zoom. */
+#dialog-body .oc-board.dv-panel{max-width:1440px;margin:0 auto}
+#dialog-body .oc-heading{padding:8px 0 28px;border-bottom:1px solid #aebdd230;margin-bottom:24px}
+#dialog-body .oc-heading>span{color:#e8cea0;font-size:15px;letter-spacing:.08em}
+#dialog-body .oc-heading h3{color:#edf5ff;font-size:clamp(26px,2.6vw,38px);line-height:1.5;font-weight:600;margin:12px 0 14px}
+#dialog-body .oc-heading p{font-size:18px;line-height:1.8;color:#aebdd2;margin:0}
+#dialog-body .oc-board .gs-references{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+#dialog-body .oc-node:hover [data-node-focus],#dialog-body .oc-node:focus-visible [data-node-focus]{stroke:#e8cea0;stroke-width:2}
+#dialog-body .oc-node:focus-visible{outline:none}
+#dialog-body .oc-inspection-board{margin:30px 0}
+#source-dialog .detail-graph-current{flex:1 0 100%;padding:10px 14px;border-left:2px solid #e8cea0;background:#e8cea00c;color:#e8cea0;font-size:16px;line-height:1.6}
+@media(max-width:700px){#dialog-body .oc-heading{padding-bottom:22px}#dialog-body .oc-heading h3{font-size:26px}#dialog-body .oc-heading p{font-size:17px}.oc-board .gs-toolbar{align-items:flex-start;flex-direction:column}}
+@media print{.oc-board .gs-toolbar{display:none}}

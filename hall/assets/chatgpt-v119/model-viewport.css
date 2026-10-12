@@ -1,0 +1,58 @@
+/* Share the available viewport between an inspectable model and readable evidence.
+   No change to camera coordinates, scene semantics, label placement or model materials. */
+body[data-model-layout] { --model-header:76px; --model-inspector:360px; }
+body[data-model-layout="items"] { --model-inspector:340px; }
+body[data-model-layout] > header { height:var(--model-header); }
+body[data-model-layout] #viewer-shell {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) min(var(--model-inspector),32vw);
+  height:calc(100dvh - var(--model-header));
+  min-height:0;
+}
+body[data-model-layout] :is(aside,.inspector) {
+  min-width:0;
+  min-height:0;
+  max-height:100%;
+  overflow:auto;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+  padding:24px 20px 28px;
+}
+body[data-model-layout] :is(.stage,.model-stage) { min-height:0; height:100%; }
+body[data-model-layout] :is(.inspector-heading p,.detail p,.detail-objects,.case-station-detail p) { font-size:16px; line-height:1.85; }
+body[data-model-layout] :is(.stage-heading,.stage-caption) { top:24px; left:28px; }
+body[data-model-layout] :is(.stage-heading h1,.stage-caption h1) { font-size:clamp(22px,2.1vw,31px); line-height:1.4; }
+body[data-model-layout] .observation-reading { padding:15px 24px; gap:10px; }
+body[data-model-layout] .observation-reading h2 { font-size:20px; line-height:1.5; }
+body[data-model-layout] .observation-reading p { font-size:16px; line-height:1.75; }
+body[data-model-layout] .observation-reading button { font-size:16px; }
+body[data-model-layout] #viewer-shell:fullscreen { height:100dvh; }
+/* Canvas, labels and fallback use the same bounds. Keep every model name at its
+   existing screen-space size; gain space by reducing unused margins instead. */
+body[data-model-layout]:not([data-model-layout="spatial"]) .stage { --model-top:150px; --model-bottom:60px; }
+body[data-model-layout]:not([data-model-layout="spatial"]) :is(#model-canvas,#model-labels) { inset:var(--model-top) 0 var(--model-bottom); }
+body[data-model-layout]:not([data-model-layout="spatial"]) #model-fallback {
+  inset:var(--model-top) 0 var(--model-bottom);
+  width:100%;
+  height:calc(100% - var(--model-top) - var(--model-bottom));
+}
+body[data-model-layout] .stage-bottom { bottom:18px; left:28px; right:28px; }
+body[data-model-layout]:not([data-model-layout="spatial"]) #model-status { bottom:calc(var(--model-bottom) + 5px); }
+@media (min-width:761px) and (max-height:760px) {
+  body[data-model-layout]:not([data-model-layout="spatial"]) .stage { --model-top:112px; --model-bottom:52px; }
+  body[data-model-layout] :is(.stage-heading,.stage-caption) { top:14px; left:24px; }
+  body[data-model-layout] :is(.stage-heading h1,.stage-caption h1) { font-size:22px; line-height:1.35; margin-top:7px; }
+  body[data-model-layout] .stage-bottom { bottom:13px; }
+}
+@media (max-width:760px) {
+  body[data-model-layout] { --model-header:66px; }
+  body[data-model-layout] #viewer-shell { display:block; height:auto; min-height:0; }
+  body[data-model-layout] :is(.stage,.model-stage) { height:70dvh; min-height:500px; }
+  body[data-model-layout] :is(aside,.inspector) { max-height:none; overflow:visible; border-left:0; border-top:1px solid #adc9dd22; padding:24px; }
+  body[data-model-layout]:not([data-model-layout="spatial"]) .stage { --model-top:145px; --model-bottom:90px; }
+  body[data-model-layout] :is(.stage-heading,.stage-caption) { top:20px; left:24px; }
+  body[data-model-layout] .stage-bottom { bottom:18px; left:24px; right:24px; }
+  body[data-model-layout] .observation-reading { display:grid; grid-template-columns:1fr; padding:18px 24px; }
+  body[data-model-layout] .observation-reading button { justify-self:start; }
+  body[data-model-layout] #viewer-shell:fullscreen { height:100dvh; overflow:auto; }
+}

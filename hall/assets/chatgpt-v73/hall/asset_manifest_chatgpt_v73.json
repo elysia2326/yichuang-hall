@@ -1,0 +1,514 @@
+{
+  "version": "chatgpt-73.0",
+  "model": "integrated_governance_hall_chatgpt_v73.glb",
+  "editable_blend": "artwork/blender-chatgpt-v73/governance_exhibit_chatgpt_v73.blend",
+  "design_note": "研究案例业务关系的原创空间设计示意，非现场实测建筑；12个设计窗口不是实际窗口数量。",
+  "semantic_groups": [
+    "SHELL",
+    "FRONT_DESK",
+    "WAITING",
+    "TRANSFER",
+    "ZONE_ITEMS",
+    "ZONE_PROCESS",
+    "ZONE_DATA",
+    "ZONE_REGULATION",
+    "ROOF"
+  ],
+  "default_hidden": [
+    "ROOF"
+  ],
+  "axis": "Blender Z-up; glTF Y-up; conversion (x,y,z) -> (x,z,-y)",
+  "camera_blender": {
+    "position": [
+      39,
+      -47,
+      42
+    ],
+    "target": [
+      0,
+      0,
+      0.6
+    ],
+    "orthographic_scale": 48
+  },
+  "camera_gltf": {
+    "position": [
+      39,
+      42,
+      47
+    ],
+    "target": [
+      0,
+      0.6,
+      0
+    ]
+  },
+  "statistics": {
+    "original_detail_objects": 246,
+    "added_action_meshes": 180,
+    "export_meshes": 246,
+    "triangles": 237736,
+    "vertices": 443977,
+    "materials": 29,
+    "editable_triangles": 728954,
+    "glb_bytes": 12377492
+  },
+  "bounds_blender": {
+    "min": [
+      -17.600000381469727,
+      -14.600000381469727,
+      -0.6000000238418579
+    ],
+    "max": [
+      17.600000381469727,
+      12.600000381469727,
+      4.489999771118164
+    ]
+  },
+  "render": {
+    "engine": "Cycles",
+    "samples": 96,
+    "resolution": [
+      2400,
+      1600
+    ],
+    "devices": [],
+    "seconds": 164.3950057029724,
+    "transparent_background": true,
+    "exposure": 0.25,
+    "device_evidence": "Offline Blender run; hardware utilization not measured",
+    "per_image": [
+      {
+        "file": "hall_hero_chatgpt_v73.png",
+        "seconds": 164.3950057029724,
+        "resolution": [
+          2800,
+          1280
+        ],
+        "samples": 96
+      }
+    ]
+  },
+  "layout": {
+    "front": "negative Blender y; entrance, guidance, waiting, kiosks, unified acceptance counters",
+    "transfer": "Blender y around 2.6; shared checking and handoff spine",
+    "back": "positive Blender y; four separate collaboration rooms",
+    "roof": "complete independent removable roof with skylights and ventilation plant"
+  },
+  "material_repair": "Explicit active material output; names independent of localized Blender UI",
+  "glb_file": "integrated_governance_hall_chatgpt_v73.glb",
+  "tour_stops": [
+    {
+      "key": "entry",
+      "title": "入口与导办",
+      "center_gltf": [
+        0,
+        0.8,
+        8
+      ],
+      "center_blender": [
+        0,
+        -8,
+        0.8
+      ],
+      "size_gltf": [
+        8,
+        3.4,
+        7
+      ]
+    },
+    {
+      "key": "front",
+      "title": "统一受理 · 设计03号柜台",
+      "center_gltf": [
+        -6.6,
+        1,
+        2
+      ],
+      "center_blender": [
+        -6.6,
+        -2,
+        1
+      ],
+      "size_gltf": [
+        6,
+        3.5,
+        5
+      ]
+    },
+    {
+      "key": "verify",
+      "title": "共享材料核验",
+      "center_gltf": [
+        0,
+        0.8,
+        -2.6
+      ],
+      "center_blender": [
+        0,
+        2.6,
+        0.8
+      ],
+      "size_gltf": [
+        15,
+        3.4,
+        5
+      ]
+    },
+    {
+      "key": "back",
+      "title": "四类后台协同",
+      "center_gltf": [
+        0,
+        1,
+        -8
+      ],
+      "center_blender": [
+        0,
+        8,
+        1
+      ],
+      "size_gltf": [
+        33,
+        4,
+        8
+      ]
+    },
+    {
+      "key": "output",
+      "title": "出件演示 · 设计12号柜台",
+      "center_gltf": [
+        13.5,
+        1,
+        2
+      ],
+      "center_blender": [
+        13.5,
+        -2,
+        1
+      ],
+      "size_gltf": [
+        5,
+        3.5,
+        5
+      ],
+      "note": "设计演示位置，不表示案例现场设置实际出件专窗。"
+    }
+  ],
+  "chinese_signage": {
+    "font_source": "C:/Windows/Fonts/simhei.ttf",
+    "font_distributed": false,
+    "method": "Chinese labels converted to mesh; no external font dependency"
+  },
+  "preview_pngs": [
+    "hall_hero_chatgpt_v73.png"
+  ],
+  "hero": "hall_hero_chatgpt_v73.png",
+  "material_pipeline": {
+    "glass": {
+      "alpha": 1,
+      "metallic": 0,
+      "transmission": 0.82,
+      "ior": 1.45,
+      "roughness": 0.11
+    },
+    "procedural_detail": "Noise -> roughness and bump retained in blend; mean roughness exported to glTF",
+    "material_count": 25,
+    "external_textures": false,
+    "palette": "Cool enamel public counter / four separated muted workstation accents / coated titanium / transmissive architectural glass",
+    "reference": "V73 original physical materials and actual Cycles lighting; same complete V60 geometry, V66 overview camera and existing role contacts."
+  },
+  "spatial_identity": {
+    "new_meshes": 180,
+    "font": "Project Noto Sans CJK Bold converted to mesh",
+    "features": [
+      "neutral light and material separation",
+      "posed front reception",
+      "two-person shared dossier handoff",
+      "four distinct role workbenches"
+    ],
+    "diagram": "Original research model; people, files and furniture are illustrative, not administrative counts"
+  },
+  "observation_stops": {
+    "front": {
+      "label": "统一收件",
+      "parent_group": "FRONT_DESK",
+      "center_blender": [
+        -2,
+        -2.4,
+        1
+      ],
+      "size_blender": [
+        5,
+        4,
+        4
+      ],
+      "center_gltf": [
+        -2,
+        1,
+        2.4
+      ],
+      "size_gltf": [
+        5,
+        4,
+        4
+      ],
+      "direction_gltf": [
+        0.8,
+        1.2,
+        1.4
+      ]
+    },
+    "transfer": {
+      "label": "交接核验",
+      "parent_group": "TRANSFER",
+      "center_blender": [
+        0,
+        3.32,
+        1
+      ],
+      "size_blender": [
+        5,
+        4,
+        4
+      ],
+      "center_gltf": [
+        0,
+        1,
+        -3.32
+      ],
+      "size_gltf": [
+        5,
+        4,
+        4
+      ],
+      "direction_gltf": [
+        0.8,
+        1.2,
+        1.4
+      ]
+    },
+    "items": {
+      "label": "对应权限审查",
+      "parent_group": "ZONE_ITEMS",
+      "center_blender": [
+        -12.3,
+        6.8,
+        1
+      ],
+      "size_blender": [
+        5.8,
+        4.5,
+        4
+      ],
+      "center_gltf": [
+        -12.3,
+        1,
+        -6.8
+      ],
+      "size_gltf": [
+        5.8,
+        4,
+        4.5
+      ],
+      "direction_gltf": [
+        0.8,
+        1.2,
+        1.4
+      ]
+    },
+    "process": {
+      "label": "程序签批接续",
+      "parent_group": "ZONE_PROCESS",
+      "center_blender": [
+        -4.1,
+        6.8,
+        1
+      ],
+      "size_blender": [
+        5.8,
+        4.5,
+        4
+      ],
+      "center_gltf": [
+        -4.1,
+        1,
+        -6.8
+      ],
+      "size_gltf": [
+        5.8,
+        4,
+        4.5
+      ],
+      "direction_gltf": [
+        0.8,
+        1.2,
+        1.4
+      ]
+    },
+    "data": {
+      "label": "授权与业务核验",
+      "parent_group": "ZONE_DATA",
+      "center_blender": [
+        4.1,
+        6.8,
+        1
+      ],
+      "size_blender": [
+        5.8,
+        4.5,
+        4
+      ],
+      "center_gltf": [
+        4.1,
+        1,
+        -6.8
+      ],
+      "size_gltf": [
+        5.8,
+        4,
+        4.5
+      ],
+      "direction_gltf": [
+        0.8,
+        1.2,
+        1.4
+      ]
+    },
+    "regulation": {
+      "label": "统筹与执法职责",
+      "parent_group": "ZONE_REGULATION",
+      "center_blender": [
+        12.3,
+        6.8,
+        1
+      ],
+      "size_blender": [
+        5.8,
+        4.5,
+        4
+      ],
+      "center_gltf": [
+        12.3,
+        1,
+        -6.8
+      ],
+      "size_gltf": [
+        5.8,
+        4,
+        4.5
+      ],
+      "direction_gltf": [
+        0.8,
+        1.2,
+        1.4
+      ]
+    }
+  },
+  "hashes": {
+    "integrated_governance_hall_chatgpt_v73.glb": "32d832dc1320d64b092c5f4d7b7d543939f9b32d40282250d5ea1ec983f8a8c1",
+    "hall_hero_chatgpt_v73.png": "e40281893345afca08edb38364a896af4c9734177da922790f7e8579f316fef6"
+  },
+  "cutaway": {
+    "mode": "roof and overhead ribs hidden together by default",
+    "roof_group": "ROOF",
+    "preserved_ribs": "ROOF_CUTAWAY_RIBS",
+    "ribs_count": 5,
+    "complete_geometry_retained": true,
+    "editable_triangles_before": 728954,
+    "editable_triangles_after": 728954,
+    "rear_sign_assemblies": 4,
+    "sign_moves": [
+      {
+        "object": "V38_department sign panel",
+        "group": "ZONE_ITEMS",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign rim",
+        "group": "ZONE_ITEMS",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_SIGN_事项审批",
+        "group": "ZONE_ITEMS",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign panel.001",
+        "group": "ZONE_PROCESS",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign rim.001",
+        "group": "ZONE_PROCESS",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_SIGN_流程签批",
+        "group": "ZONE_PROCESS",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign panel.002",
+        "group": "ZONE_DATA",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign rim.002",
+        "group": "ZONE_DATA",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_SIGN_数据核验",
+        "group": "ZONE_DATA",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign panel.003",
+        "group": "ZONE_REGULATION",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_department sign rim.003",
+        "group": "ZONE_REGULATION",
+        "delta_y": 6.55
+      },
+      {
+        "object": "V38_SIGN_监管统筹",
+        "group": "ZONE_REGULATION",
+        "delta_y": 6.55
+      }
+    ],
+    "hand_contacts": [
+      {
+        "role": "handoff officer",
+        "hand": "V59_handoff officer hand.001",
+        "forearm": "V59_handoff officer forearm.001",
+        "contact": [
+          -0.14000000059604645,
+          3.4000000953674316,
+          1.4600000381469727
+        ]
+      },
+      {
+        "role": "front coordinator",
+        "hand": "V59_front coordinator hand",
+        "forearm": "V59_front coordinator forearm",
+        "contact": [
+          0.14000000059604645,
+          3.2699999809265137,
+          1.4600000381469727
+        ]
+      }
+    ]
+  },
+  "derivatives": {
+    "hall-display-1440.webp": {
+      "bytes": 140582,
+      "sha256": "500ba18a6d4b5001e64d98f3a7a72bc59f5d03a4f1b6fbed29f0ae87e9a3e29e",
+      "source": "hall_hero_chatgpt_v73.png",
+      "width": 1440
+    }
+  }
+}

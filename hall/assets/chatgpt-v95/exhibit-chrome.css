@@ -1,0 +1,19 @@
+/* Sapphire exhibition chrome. Existing type, layout and hit targets retained. */
+#gov-screen {background:#070e20;}
+#gov-screen .masthead {background:linear-gradient(180deg,#233653 0,#16253f 8%,#0c172c 87%,#12223c);}
+#gov-screen .head-title {background:linear-gradient(180deg,#456182 0,#293f60 6%,#14253f 78%,#203857);box-shadow:inset 0 1px #c5deff44,inset 0 -2px #050e20;}
+#gov-screen .masthead::after {background:linear-gradient(90deg,transparent,#395680 20%,#a2c9ee 38%,#3d568d 50%,#a2c9ee 62%,#395680 80%,transparent);box-shadow:0 1px #030b13;}
+#gov-screen .head-tools button {background:linear-gradient(155deg,#253d5c,#0e2139);border-color:#86a5cb70;box-shadow:inset 0 1px #c3ddff26;}
+#gov-screen footer {background:#050c1a;border-top-color:#91aedc45;}
+#gov-screen #topic-nav button {background:linear-gradient(145deg,#1d3350,#0b1a30);border-color:#789fc055;box-shadow:inset 0 1px #b9d9ff24,inset 0 -2px #030918;color:#b6c6df;}
+#gov-screen #topic-nav button[aria-current="page"] {background:linear-gradient(150deg,#355878,#213a58);border-color:#c1dcf099;box-shadow:inset 0 1px #d9edff55,inset 0 -2px #14233f,0 3px 8px #0005;color:#f2f7ff;}
+#gov-screen .art-hit:hover {background:#a1c8ff0c;border-color:#9bc0f077;box-shadow:inset 0 0 18px #a1c8ff08;}
+#gov-screen:not([data-topic="overview"]) .ambient::after {background:#01091326;}
+
+/* Current texture is entirely local; no full-screen filters or extra animation loop. */
+#gov-screen .head-title {border-bottom:1px solid #a7c7ff70;}
+#gov-screen #topic-nav button:focus-visible {outline:2px solid #c3e8ff;outline-offset:3px;}
+
+/* V95 shared dark glass shell; data and font metrics are unchanged. */
+#gov-screen .head-title {text-shadow:0 1px 2px #030b18;}
+#gov-screen .art-hit:focus-visible {outline:2px solid #c4e6f3;outline-offset:2px;}

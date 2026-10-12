@@ -1,0 +1,39 @@
+/* Native 1200px typography and retained DOM zoom. */
+#source-dialog:has(.gs-board) #dialog-body{max-width:1600px;padding:24px 32px 60px}
+#source-dialog:has(.gs-board) .dialog-head{padding-left:max(32px,calc((100% - 1536px)/2));padding-right:max(32px,calc((100% - 1536px)/2))}
+#dialog-body .gs-board.dv-panel{color:#e7f1f8;font-family:ReformSans,'Microsoft YaHei',sans-serif;max-width:1440px;margin:0 auto;padding:0;border:0;border-radius:0;background:none;box-shadow:none;line-height:1.65}
+.gs-board *{box-sizing:border-box}
+.gs-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:14px;min-height:48px;color:#c7d9e6;font-size:18px;font-weight:600}
+.gs-toolbar small{display:inline-block;margin-left:18px;font-size:16px;font-weight:400;color:#a5b9cb}
+.gs-zoom-controls{display:flex;gap:6px;flex-shrink:0}
+.gs-board .gs-zoom-controls button{min-width:68px;min-height:44px;padding:7px 12px;border:1px solid #3d566e;border-radius:5px;background:#0c2134;color:#b5c8d8;font:500 17px ReformSans,'Microsoft YaHei',sans-serif;cursor:pointer}
+.gs-board .gs-zoom-controls button[aria-pressed=true]{background:linear-gradient(180deg,#21445a,#183447);border-color:#8fcbd9;color:#edf9ff;box-shadow:inset 0 1px 0 #a9deeb33}
+.gs-board .gs-zoom-controls button:hover{border-color:#b4dce7}
+.gs-board .gs-zoom-controls button:focus-visible,.gs-scroll:focus-visible{outline:2px solid #dfc28e;outline-offset:3px}
+.gs-figure{margin:0;border:1px solid #49637a;border-radius:6px;background:#0a1b2c;overflow:hidden;box-shadow:0 12px 36px #00000024,inset 0 1px 0 #b5d5e018}
+.gs-scroll{width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-color:#56758d #0c2032;scrollbar-width:thin}
+.gs-svg{display:block;width:100%;height:auto;min-width:1200px;max-width:none}
+.gs-svg text{font-family:ReformSans,'Microsoft YaHei',sans-serif}
+.gs-node{cursor:pointer;outline:none}
+.gs-board .gs-svg .gs-node:focus{stroke:none;stroke-width:0;fill:none;outline:none}
+.gs-node>g>rect:first-child,.gs-node>rect:first-child{transition:stroke .15s,stroke-opacity .15s}
+.gs-node:hover>g>rect:first-child,.gs-node:hover>rect:first-child,.gs-node:focus-visible>g>rect:first-child,.gs-node:focus-visible>rect:first-child{stroke:#e6d2a7;stroke-opacity:1;stroke-width:2}
+.gs-figure figcaption{display:flex;flex-wrap:wrap;gap:10px 28px;padding:13px 22px;font-size:16px;color:#a5b9cb;border-top:1px solid #2b4158;background:linear-gradient(180deg,#10283c,#0c2032)}
+.gs-legend-solid::before,.gs-legend-dashed::before{content:'';display:inline-block;width:28px;margin:0 10px 4px 0;border-top:2px solid #b0dce5}
+.gs-legend-dashed::before{border-top-style:dashed;border-top-color:#dfc28e}
+#dialog-body .gs-reading{display:grid;grid-template-columns:160px 1fr;gap:22px;margin:24px 0 28px;padding:19px 22px;border-left:2px solid #d4ba8b;background:linear-gradient(105deg,#152e40,#0c203200);color:#c1d1df}
+#dialog-body .gs-reading>span{font-size:18px;font-weight:600;color:#e2ccaa}
+#dialog-body .gs-reading p{margin:0;font-size:18px;line-height:1.75;color:#b6cbdc}
+.gs-sources{margin-top:23px}
+.gs-sources h4{margin:0 0 14px;font-size:20px;font-weight:600;color:#e7f1f8;letter-spacing:.04em}
+.gs-references{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gs-board .gs-reference{display:grid;grid-template-columns:1fr;gap:6px;align-content:start;text-align:left;min-height:132px;width:100%;padding:17px 19px;border:1px solid #3d556d;border-radius:5px;background:linear-gradient(145deg,#142e42,#0d2335);color:#e7f1f8;cursor:pointer;font-family:inherit;font-size:18px;line-height:1.5;white-space:normal;transition:background .15s,border-color .15s;box-shadow:inset 0 1px 0 #b5d5e010}
+.gs-board .gs-reference:hover{background:#19394e;border-color:#97dce9}
+.gs-board .gs-reference:focus-visible{outline:3px solid #dfc28e;outline-offset:3px}
+.gs-reference-id{color:#97dce9;font-size:18px;font-weight:700}
+.gs-reference strong{font-size:18px;font-weight:500}
+.gs-reference small{font-size:16px;color:#a5b9cb}
+@media(max-width:900px){#source-dialog:has(.gs-board) #dialog-body{padding:20px 22px 44px}.gs-references{grid-template-columns:repeat(2,minmax(0,1fr))}.gs-toolbar small{display:block;margin:0}.gs-toolbar{align-items:flex-end}}
+@media(max-width:600px){#source-dialog:has(.gs-board) #dialog-body{padding:18px 15px 36px}.gs-references{grid-template-columns:1fr}.gs-toolbar{gap:10px}.gs-board .gs-zoom-controls button{min-width:56px;padding:7px 8px}.gs-figure figcaption{padding:12px 15px;gap:8px 20px}#dialog-body .gs-reading{grid-template-columns:1fr;gap:6px;padding:16px}.gs-board .gs-reference{min-height:110px}}
+@media(prefers-reduced-motion:reduce){.gs-board .gs-reference,.gs-node>g>rect:first-child,.gs-node>rect:first-child{transition:none}}
+@media print{.gs-toolbar{display:none}.gs-svg{min-width:0!important;width:100%!important}.gs-references{grid-template-columns:repeat(2,minmax(0,1fr))}.gs-board .gs-reference{break-inside:avoid}}

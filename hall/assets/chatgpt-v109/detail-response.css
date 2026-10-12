@@ -1,0 +1,18 @@
+/* Evidence-node response is user-triggered. There is no looping decoration. */
+.de-mechanism .de-mechanism-action {
+  cursor: pointer;
+  outline: none;
+}
+.de-mechanism .de-mechanism-action [data-mechanism-face] {
+  transition: stroke-opacity 160ms ease, stroke-width 160ms ease;
+}
+.de-mechanism .de-mechanism-action:hover [data-mechanism-face],
+.de-mechanism .de-mechanism-action:focus-visible [data-mechanism-face] {
+  stroke-opacity: .9;
+  stroke-width: 1.8;
+}
+@media (prefers-reduced-motion: reduce) {
+  .de-mechanism .de-mechanism-action [data-mechanism-face] {
+    transition: none;
+  }
+}

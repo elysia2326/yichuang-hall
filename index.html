@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="提质增效队初赛作品：以北京经开区“高效办成一件事”集成场景改革为案例的数据可视化展示大屏与讲解视频。">
+<title>一窗之后 · 改革智治大厅</title>
+<link rel="icon" href="hall/favicon.ico">
+<style>
+  :root {
+    --bg: #071226;
+    --bg2: #0c1d3d;
+    --ink: #eaf3ff;
+    --sub: #9fb9d6;
+    --line: rgba(120, 190, 255, 0.28);
+    --cyan: #5fd3ff;
+    --gold: #f2c45a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse 90% 70% at 50% 0%, #15376d 0%, var(--bg2) 45%, var(--bg) 100%);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 56px 16px 40px; }
+  header { text-align: center; margin-bottom: 44px; }
+  .eyebrow { color: var(--cyan); letter-spacing: .35em; font-size: 14px; }
+  h1 { margin: 14px 0 6px; font-size: clamp(30px, 5vw, 54px); letter-spacing: .08em; font-weight: 700; text-shadow: 0 0 30px rgba(95, 211, 255, .35); }
+  h1 span { color: var(--cyan); }
+  .case { color: var(--sub); font-size: clamp(15px, 2vw, 19px); margin: 0; }
+  .team { margin-top: 14px; display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: 14px; color: var(--sub); background: rgba(12, 29, 61, .6); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  a.card {
+    display: block; text-decoration: none; color: inherit;
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: linear-gradient(160deg, rgba(30, 80, 150, .35), rgba(7, 18, 38, .9));
+    box-shadow: 0 0 0 rgba(95, 211, 255, 0);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  a.card:hover, a.card:focus-visible { transform: translateY(-4px); border-color: var(--cyan); box-shadow: 0 10px 40px rgba(95, 211, 255, .25); outline: none; }
+  .thumb { position: relative; aspect-ratio: 16 / 9; background: #000; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .play {
+    position: absolute; inset: 0; display: grid; place-items: center;
+  }
+  .play i {
+    width: 78px; height: 78px; border-radius: 50%; background: rgba(7, 18, 38, .65); border: 2px solid var(--cyan);
+    display: grid; place-items: center; box-shadow: 0 0 30px rgba(95, 211, 255, .45);
+  }
+  .play i::before { content: ""; margin-left: 6px; border-style: solid; border-width: 14px 0 14px 24px; border-color: transparent transparent transparent var(--cyan); }
+  .body { padding: 20px 22px 22px; }
+  .tag { color: var(--gold); font-size: 13px; letter-spacing: .2em; }
+  .body h2 { margin: 6px 0 8px; font-size: 24px; }
+  .body p { margin: 0; color: var(--sub); font-size: 15px; }
+  .go { margin-top: 14px; color: var(--cyan); font-weight: 600; }
+  .extra { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .extra a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 8px; padding: 10px 18px; background: rgba(12, 29, 61, .6); }
+  .extra a:hover { border-color: var(--cyan); color: var(--cyan); }
+  footer { margin-top: 44px; text-align: center; color: var(--sub); font-size: 13px; }
+  footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">厦门大学第三届全国大学生公共治理AI应用大赛 · 初赛作品</div>
+    <h1>一窗之后 · <span>改革智治大厅</span></h1>
+    <p class="case">北京经开区“高效办成一件事”集成场景改革 · 案例《一件事办得成，一盘棋为何仍难接续》</p>
+    <div class="team"><span class="chip">提质增效队</span><span class="chip">数据可视化</span></div>
+  </header>
+
+  <div class="cards">
+    <a class="card" href="hall/材质智治大厅.html?view=hall#overview">
+      <div class="thumb"><img src="img/hall-preview.jpg" alt="展示大屏改革总览页截图"></div>
+      <div class="body">
+        <div class="tag">交互大屏</div>
+        <h2>进入展示大屏</h2>
+        <p>事项、流程、数据、监管四个专题，每页同时呈现成效与边界；三个可交互三维场景、160 余个可逐层展开的证据详情。</p>
+        <div class="go">打开大屏 →</div>
+      </div>
+    </a>
+    <a class="card" href="video/">
+      <div class="thumb"><img src="img/video-poster.jpg" alt="讲解视频片头"><div class="play"><i></i></div></div>
+      <div class="body">
+        <div class="tag">讲解视频 · 6 分 05 秒</div>
+        <h2>观看案例讲解视频</h2>
+        <p>从一张 30 分钟办好的营业执照讲起：政策背景、案例选地、改革做法与成效、分析框架、四道墙与研究价值。</p>
+        <div class="go">播放视频 →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="extra">
+    <a href="作品展示_一窗之后改革智治大厅.pdf" target="_blank" rel="noopener">作品展示 PDF（不运行大屏也可浏览）</a>
+  </div>
+
+  <footer>
+    <p>展示大屏建议使用电脑端 Chrome 或 Edge 浏览，开启硬件加速，1920×1080 全屏效果最佳；三维场景需要 WebGL。</p>
+    <p>本网站为案例研究展示，不是实时业务系统；数据均可回溯至公开来源或案例正文段落。</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* V99: readable detail typography; the hall and model drawings keep their sizes. */
+#source-dialog #dialog-body { font-size:18px; line-height:1.8; }
+#source-dialog :is(#detail-path,.detail-context>small,.detail-step-copy>small,
+  #dialog-back,#dialog-close,#detail-history-back) { font-size:16px; line-height:1.6; }
+#source-dialog #dialog-body :is(.de-meta,.de-footnote,.de-kicker,.de-brief-scope,
+  .de-stat-card>p,.de-brief-metric>p,.de-brief-value>small,.de-brief-value em,
+  .de-stat-card figcaption small,.de-case-question>small,.de-extra-charts>header>small,
+  .de-scene-brief header small,.de-material-ways>header>small,.de-condition-list small,
+  .de-series-sources>span,.de-evidence-record>small,.de-evidence-comparison>small,
+  .de-evidence-sources small,.de-evidence-sources article p,.de-evidence-comparison-grid small,
+  .de-source-access span,.de-source-chart figcaption small,.de-source-chart-open,
+  .de-source-quantification>header>small,.cs-context-grid article>span,
+  .dv-source-dates dt,.dv-source-related h4 span,.dv-linked-cases button>span,
+  .dv-eyebrow,.dv-badges span,.dv-flow-step small,.dv-chart-label,
+  .dv-source-identity>span,.oc-heading>span) { font-size:16px; line-height:1.75; }
+#source-dialog #dialog-body :is(.dv-panel p,.de-lead,.de-interpret p,
+  .de-case-bridge article p,.de-evidence-record>p,.de-evidence-comparison>p,
+  .de-evidence-comparison-grid p,.de-material-ways>header>p,.de-plan-package>p,
+  .de-source-chart>p,.de-source-quantification>header>p) { font-size:18px; line-height:1.85; }
+/* Old important rules otherwise shrink these notes, including at 420px. */
+#source-dialog #dialog-body :is(.dv-caption,.dv-chart-note) { font-size:16px!important; line-height:1.8!important; }
+#source-dialog #dialog-body .de-numeric-plot .dv-chart-note { font-size:16px!important; }
+#source-dialog #dialog-body .cs-core-note { font-size:18px!important; }
+#source-dialog #dialog-body :is(.de-route button>span,.de-route button>small,
+  .de-stat-source,.de-scene-brief button,.de-chart-open-label,.de-chart-source,
+  .de-plan-package button,.de-evidence-record button,.de-evidence-comparison button,
+  .de-evidence-sources button,.de-category-period,.de-category-sources button,
+  .cs-context-grid article>button,.gs-reference,.gs-toolbar button,
+  .dv-source-actions a,.source-card span,.source-card button,.related-actions button,
+  .detail-table,.detail-table button,.detail-dl,.dialog-search-tools input,
+  .dialog-search-tools select,#result-count) { font-size:16px; line-height:1.65; }
+#source-dialog #dialog-body :is(button,a,input,select,summary) { font-size:16px; min-height:44px; }
+#source-dialog .dialog-head :is(#dialog-back,#dialog-close) { font-size:16px; }
+#source-dialog #dialog-body :is(.detail-raw>summary,.de-meta>span,
+  .de-source-statistics,.de-source-statistics small,.dv-comparison figcaption span,
+  .dv-series figcaption span,.dv-pair-values small,.source-card small,.dv-metric strong small,
+  .de-interpret>small,.de-chip-row>span,.de-numeric-plot figcaption span,.de-scene small,
+  .de-series-sources button,.outline-button,.cs-kicker,.cs-original small,.cs-actions button,
+  .de-paper>small,.de-evidence article>small,.de-context-links small,
+  .de-mechanism figcaption span,.de-scene-observation>small,.de-scene-handoff>small,
+  .de-lens-grid>button small,.de-lens-grid>button b,.de-scene-records>summary small,
+  .de-brief-metric h4,.de-bridge-pair small,.de-bridge-question>span,.de-stat-number>small,
+  .cs-core-grid span,.cs-core-grid i) { font-size:16px; line-height:1.75; }
+#source-dialog #dialog-body .cs-core-grid p { font-size:18px; line-height:1.85; }
+/* Preserve the larger research questions and evidence facts above body copy. */
+#source-dialog #dialog-body .de-case-question .de-bridge-question>p { font-size:20px; }
+#source-dialog #dialog-body .de-evidence-record>.de-evidence-fact { font-size:24px; }
+#source-dialog #dialog-body .de-evidence-comparison-grid .de-comparison-fact { font-size:22px; }
+#source-dialog #dialog-body :is(.de-source-plot-scroll,.de-case-chart-wrap,.de-quant-chart) {
+  max-width:100%; min-width:0; overflow-x:auto; overscroll-behavior-x:contain;
+}
+#source-dialog #dialog-body .de-case-metric-chart { min-width:340px; }
+/* Select the readable chart by its column width, rather than window width. */
+#source-dialog #dialog-body .de-exhibit[data-stage="metric"] .de-chart { container-type:inline-size; min-width:0; }
+#source-dialog #dialog-body .de-exhibit[data-stage="metric"] .de-metric-chart { display:none; }
+#source-dialog #dialog-body .de-exhibit[data-stage="metric"] .de-metric-compact {
+  display:block; min-width:340px; max-width:450px;
+}
+@container (min-width:700px) {
+  #source-dialog #dialog-body .de-exhibit[data-stage="metric"] .de-metric-chart { display:block; }
+  #source-dialog #dialog-body .de-exhibit[data-stage="metric"] .de-metric-compact { display:none; }
+}
+@media(max-width:700px) {
+  #source-dialog #dialog-body .de-case-stats .de-case-metric { display:flex; flex-direction:column; gap:20px; }
+  #source-dialog #dialog-body .de-case-chart-wrap { grid-column:auto; grid-row:auto; }
+  #source-dialog #detail-path { margin-right:0; padding-right:0; }
+  #source-dialog #detail-sections { gap:8px; }
+  #source-dialog #dialog-body .de-route { gap:16px; }
+}

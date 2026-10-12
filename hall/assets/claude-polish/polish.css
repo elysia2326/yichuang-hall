@@ -1,0 +1,83 @@
+/* Claude 视觉优化层（只改颜色、光感与对比，不改布局、文字与数据）
+   移除方法：删掉 材质智治大厅.html 中引用本文件的 <link> 即可恢复原样。 */
+
+/* ---------- 1. 底色：深灰蓝 → 深科技蓝，中心略亮并带淡光束 ---------- */
+#gov-screen {
+  background:
+    radial-gradient(ellipse 90% 85% at 50% 48%, rgba(2, 10, 36, 0) 50%, rgba(1, 6, 24, .55) 100%),
+    repeating-conic-gradient(from 90deg at 50% -8%, rgba(120, 190, 255, .05) 0deg 1.3deg, transparent 1.3deg 5deg),
+    radial-gradient(ellipse 80% 75% at 50% 45%, #0d3486 0%, #0a2868 38%, #071d4f 70%, #04133a 100%) !important;
+}
+
+/* ---------- 2. 顶栏与底栏 ---------- */
+.masthead { background: linear-gradient(180deg, #0b2a6a 0, #081f54 45%, #061844 88%, #0a2458) !important; }
+.masthead::after { background: linear-gradient(90deg, transparent, #2f8bff 18%, #8ff0ff 38%, #3c7be0 50%, #8ff0ff 62%, #2f8bff 82%, transparent) !important;
+  box-shadow: 0 0 10px rgba(80, 200, 255, .7) !important; }
+.head-title { background: linear-gradient(180deg, #1a4fae 0, #123d8c 55%, #0e3278 100%) !important;
+  box-shadow: 0 6px 24px rgba(40, 140, 255, .35); }
+.head-title h1 { color: #fff !important; text-shadow: 0 0 14px rgba(110, 200, 255, .85), 0 2px 4px rgba(0, 20, 80, .6); }
+.head-title p { color: #cfe6ff !important; }
+footer { background: linear-gradient(0deg, #03102c, #061a46) !important; }
+#topic-nav button { background: linear-gradient(160deg, #123f8f, #0a2a66) !important; border-color: #4f9ce855 !important; color: #cfe3ff !important; }
+#topic-nav button[aria-current="page"] { background: linear-gradient(160deg, #2f95ff, #1558c8) !important; border-color: #a9e6ff !important;
+  color: #fff !important; text-shadow: 0 0 8px rgba(255, 255, 255, .6); box-shadow: 0 0 18px rgba(80, 190, 255, .55), inset 0 1px #e2f6ff !important; }
+
+/* ---------- 3. 面板底板：近黑 / 紫灰 → 半透明蓝色玻璃 ---------- */
+svg.topic-art [id$="-v72-main"] stop:nth-of-type(1),
+svg.topic-art [id$="v53metric"] stop:nth-of-type(1),
+svg.topic-art [id$="-v72-metric"] stop:nth-of-type(1) { stop-color: #143f8e; stop-opacity: .9; }
+svg.topic-art [id$="-v72-main"] stop:nth-of-type(2),
+svg.topic-art [id$="v53metric"] stop:nth-of-type(2),
+svg.topic-art [id$="-v72-metric"] stop:nth-of-type(2) { stop-color: #10347a; stop-opacity: .88; }
+svg.topic-art [id$="-v72-main"] stop:nth-of-type(n+3),
+svg.topic-art [id$="v53metric"] stop:nth-of-type(n+3),
+svg.topic-art [id$="-v72-metric"] stop:nth-of-type(n+3) { stop-color: #0b2862; stop-opacity: .86; }
+
+svg.topic-art [id$="-v72-support"] stop:nth-of-type(1),
+svg.topic-art [id$="v53support"] stop:nth-of-type(1) { stop-color: #113883; stop-opacity: .88; }
+svg.topic-art [id$="-v72-support"] stop:nth-of-type(n+2),
+svg.topic-art [id$="v53support"] stop:nth-of-type(n+2) { stop-color: #0b2862; stop-opacity: .86; }
+
+/* 原“观察 / 暖灰”底板偏紫灰，统一到蓝色体系，保留稍深一级作区分 */
+svg.topic-art [id$="-v72-observation"] stop:nth-of-type(1),
+svg.topic-art [id$="v53observation"] stop:nth-of-type(1),
+svg.topic-art [id$="-hall-v65-warm"] stop:nth-of-type(1) { stop-color: #12357c; stop-opacity: .9; }
+svg.topic-art [id$="-v72-observation"] stop:nth-of-type(n+2),
+svg.topic-art [id$="v53observation"] stop:nth-of-type(n+2),
+svg.topic-art [id$="-hall-v65-warm"] stop:nth-of-type(n+2) { stop-color: #0a245a; stop-opacity: .88; }
+
+/* ---------- 4. 文字：灰蓝提亮，米金改为真金色 ---------- */
+svg.topic-art text[fill="#bccbe1"] { fill: #d6e9ff; }
+svg.topic-art text[fill="#adebfa"] { fill: #9ff3ff; }
+svg.topic-art text[fill="#e8cea0"] { fill: #ffd67e; }
+svg.topic-art text[fill="#e6d5b6"], svg.topic-art text[fill="#e6d6b8"] { fill: #ffe3a8; }
+svg.topic-art text[fill="#799db7"] { fill: #97c1ea; }
+svg.topic-art text[fill="#94a9bf"], svg.topic-art text[fill="#97acc1"] { fill: #b7d2f2; }
+/* 大号数字加辉光 */
+svg.topic-art text[fill="#e8cea0"]:is([font-size="24"], [font-size="32"], [font-size="36"], [font-size="39"], [font-size="44"], [font-size="48"]) {
+  filter: drop-shadow(0 0 6px rgba(255, 196, 80, .65)); }
+svg.topic-art text:is([fill="#edf5ff"], [fill="#adebfa"]):is([font-size="32"], [font-size="36"], [font-size="39"], [font-size="44"], [font-size="48"]) {
+  filter: drop-shadow(0 0 6px rgba(90, 210, 255, .6)); }
+
+/* ---------- 5. 线框：灰蓝边框改为青色，米金强调线改为金色 ---------- */
+svg.topic-art :is(path, rect, line, polyline, circle):is([stroke="#8db4cf"], [stroke="#759bc5"], [stroke="#839caf"], [stroke="#acc1cf"], [stroke="#abc8dd"], [stroke="#7091b4"], [stroke="#8bb9cc"]) { stroke: #5fc4ff; }
+svg.topic-art :is(path, rect, line, polyline):is([stroke="#e8cea0"], [stroke="#d7bf94"]) { stroke: #ffc24a; }
+svg.topic-art :is(path, rect):is([fill="#e8cea0"]) { fill: #ffc24a; }
+svg.topic-art :is(path, rect):is([fill="#ddbe8e"], [fill="#b9a47e"]) { fill: #f0b44a; }
+/* 条形图：改革后亮青，改革前与底槽转入蓝色系 */
+svg.topic-art rect:is([fill="#93ceda"], [fill="#a4e3f4"], [fill="#b6dcec"]) { fill: #6fe4ff; filter: drop-shadow(0 0 4px rgba(80, 220, 255, .7)); }
+svg.topic-art rect:is([fill="#8098ac"], [fill="#8da7bd"]) { fill: #8eaad8; }
+svg.topic-art :is(rect, path):is([fill="#31465a"], [fill="#2a4054"], [fill="#34485d"], [fill="#243d50"], [fill="#284e65"], [fill="#243b4d"], [fill="#234155"], [fill="#173149"]) { fill: #173a78; }
+
+/* ---------- 6. 三维渲染图调色 ---------- */
+/* 总览大厅：提饱和、提亮 */
+svg.topic-art image[href*="hall-display"] { filter: saturate(1.3) brightness(1.1) contrast(1.05); }
+/* 事项集成白色素模：染为全息蓝，避免在蓝底上发白突兀 */
+svg.topic-art image[href*="organization_lettering"] { filter: sepia(1) hue-rotate(172deg) saturate(2.6) brightness(.86) contrast(1.08); }
+/* 流程协同四个服务台：同样偏蓝处理，但保留材质 */
+svg.topic-art image[href*="public_arrangements"] { filter: sepia(.8) hue-rotate(172deg) saturate(2) brightness(.93) contrast(1.05); }
+
+/* ---------- 7. 详情 / 三维弹窗外框：与主屏深蓝统一 ---------- */
+#source-dialog { background: linear-gradient(180deg, #0b2864, #061a46) !important; border-color: #3d8fe099 !important;
+  box-shadow: 0 0 40px rgba(30, 120, 255, .35) !important; }
+#source-dialog::backdrop { background: rgba(2, 10, 36, .78) !important; }
